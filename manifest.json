@@ -4,9 +4,6 @@
     "description": "This extension automatically zoom fits any opened Google document.",
     "version": "1.0",
     "icons": {
-        // Combination of the following:
-        // https://pixabay.com/en/app-application-arrow-back-button-1646222/
-        // https://www.iconsdb.com/tropical-blue-icons/blank-file-icon.html
         "128": "icon.png"
     },
     "permissions": [
