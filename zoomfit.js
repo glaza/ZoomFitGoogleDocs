@@ -1,23 +1,39 @@
 
+
+/**
+ * Presses the zoom area
+ */
 function zoom() 
 {
-    if ($("#zoomSelect div[aria-label='Zoom list. 100% selected.']").length > 0) 
+    var inputSelector = "#zoomSelect input.jfk-textinput";
+    if ( $( inputSelector ).length > 0 ) 
     {
-        console.log("Menu loaded, Zoom Fitting...");
+        console.log( "Menu loaded, Zoom Fitting..." );
 
-        $("#zoomSelect input.jfk-textinput").simulate('mousedown');
+        $( inputSelector ).simulate( 'mousedown' );
 
-        setTimeout(
-            function () {
-                $("#\\:3f").simulate('mouseup');
-            },
-            10
-        );
+        setTimeout( fit, 100 );
     }
     else // retry 
     {
-        setTimeout(zoom, 100);
+        setTimeout( zoom, 100 );
     }
 }
 
-setTimeout(zoom, 100);
+/**
+ * Selects the Fit zoom level
+ */
+function fit()
+{
+    var fitSelector = "div.goog-menu[style*='visible']:first div:first";
+    if ( $( fitSelector ).length > 0 )
+    {
+        $( fitSelector ).simulate( 'mouseup' );
+    }
+    else // retry
+    {
+        setTimeout( fit, 100 );
+    }
+}
+
+setTimeout( zoom, 100 );
